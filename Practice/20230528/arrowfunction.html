@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let inputnumber = prompt("Enter the factorial number");
+        inputnumber = parseInt(inputnumber);
+
+        let GenerateFactorial= function(inputnumber)=> {
+            let product = 1;
+            for(let i = inputnumber; i >= 1; i--)
+            product = product * i;
+
+            return product
+
+        }
+
+            let factproduct = GenerateFactorial(inputnumber);
+            document.write(` ${inputnumber} Factorial is ${factproduct}  `)
+    </script>   
+</body>
+</html>
