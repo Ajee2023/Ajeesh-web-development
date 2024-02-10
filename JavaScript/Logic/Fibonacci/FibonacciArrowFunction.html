@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series </title>
+</head>
+<body>
+    <script>  
+    var n = Number(prompt("Enter limit: "));
+    const fibonacci = n =>
+    Array.from({
+        length: n
+    }).reduce(
+        (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []
+     );
+    console.log("Fibonnaci series: ");
+    console.log(fibonacci(n));    
+          
+    </script>     
+</body>
+</html>
+ 
+
+ 

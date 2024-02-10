@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function factorial(num){
+    if(num<0){
+    console.log("Cannot perform operation for :" + num);
+    }
+    else if(num===0){
+    console.log("Result: 0");
+    }
+    else{
+      var fact=1;
+      for(var i=1;i<=num;i++){
+        fact= fact*i;
+      }
+    }
+    return fact;
+    }
+    console.log("Result: "+factorial(5));
+    </script>
+</body>
+</html>

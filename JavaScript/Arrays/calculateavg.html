@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let subjects = [];
+        let total = 0;
+        let avg;
+
+        for (let i = 0; i < 5; i++) {
+            subjects[i] = parseInt(prompt(`Enter the ${i} subject`));
+            total = total + subjects[i];
+        }
+        avg = total / subjects.length;
+
+        document.write(` <br> Total is ${total}`);
+        document.write(` <br> Average is ${avg}`);        
+    </script>
+</body>
+
+</html>
