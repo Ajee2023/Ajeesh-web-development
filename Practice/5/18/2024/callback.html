@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function subtract(firstnum, secondnum, callback) {
+            let subtract = firstnum - secondnum
+
+            callback(subtract);
+        }
+
+        function browser(answer) {
+            document.write("display the value" + answer);
+        }
+
+        function myconsole(answer) {
+            console.log("display the value" + answer);
+        }
+
+        subtract(8, 10, browser);
+        subtract(8, 5, myconsole);
+    </script>
+</body>
+
+</html>

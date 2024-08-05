@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Array with nested sub-arrays (boxes with toys)
+        let room = ["car", "dolls", ["blocks", "teddy bear"], "ball"];
+
+        // Flatten the room array (unpack all the boxes)
+        let flatRoom = room.flat();
+
+        console.log(room); // Output: ["car", "dolls", ["blocks", "teddy bear"], "ball"] (unchanged)
+        console.log(flatRoom); // Output: ["car", "dolls", "blocks", "teddy bear", "ball"] (flattened)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        function calculateAverageProperty(objects, propertyName) {
+            // Initialize variables
+            let sum = 0;
+            let count = 0;
+
+            // Loop through each object in the array
+            for (const obj of objects) {
+                // Check if the property exists in the object
+                if (obj.hasOwnProperty(propertyName)) {
+                    sum += obj[propertyName];
+                    count++;
+                }
+            }
+
+            // Check if any objects had the property before dividing
+            if (count === 0) {
+                return `No objects have the property "${propertyName}".`;
+            }
+
+            // Calculate and return the average
+            return sum / count;
+        }
+
+        //  data
+        const students = [
+            { name: "Alice", age: 22, grade: 85 },
+            { name: "Bob", age: 20, grade: 92 },
+            { name: "Charlie", age: 21 }, 
+        ];
+
+        // usage
+        const averageGrade = calculateAverageProperty(students, "grade");
+        console.log("Average grade:", averageGrade);
+    </script>
+</body>
+
+</html>

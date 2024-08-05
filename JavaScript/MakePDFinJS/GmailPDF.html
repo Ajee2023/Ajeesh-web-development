@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to PDF Example</title>
+    <script
+			src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+			integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+</head>
+<body>
+    <h1>Order Details</h1>
+    <p>Name: <input type="text" id="name" value="John Doe"></p>
+    <p>Email: <input type="email" id="email" value="johndoe@example.com"></p>
+    <button id="print_to_pdf">Download PDF</button>
+
+    <script>
+        document.getElementById('print_to_pdf').onclick = function () {
+            // Get form values
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            // Update HTML with values as text
+            document.getElementById('name').outerHTML = "<p>Name: " + name + "</p>";
+            document.getElementById('email').outerHTML = "<p>Email: " + email + "</p>";
+
+            // Now convert the updated HTML to PDF
+            var element = document.body; // Convert the entire body
+            html2pdf().from(element).save('order_details.pdf');
+
+            // Revert the HTML back to form elements (optional)
+            // document.getElementById('name').outerHTML = "<p>Name: <input type='text' id='name' value='" + name + "'></p>";
+            // document.getElementById('email').outerHTML = "<p>Email: <input type='email' id='email' value='" + email + "'></p>";
+        }
+    </script>
+</body>
+</html>

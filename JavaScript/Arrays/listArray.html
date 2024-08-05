@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getUniqueNames(name)
+        {
+            const uniqueNames = [];
+
+            for(let i=0; i < names.length; i++) {
+                let isUnique = true;
+                for(let j = 0; j < i; j++) {
+                    if (names[i] === names[j]) {
+                        isUnique = false;
+                        break;
+                    }
+                }
+                if(isUnique) {
+                    uniqueNames.push(names[i]);
+                }
+            }
+
+            return uniqueNames;
+
+        }
+
+        const names = ["Alice", "Bob", "Alice", "Charlie", "Bob"];
+        const uniqueNames = getUniqueNames(names);
+        console.log(uniqueNames);// output: ["Alices, Bob, Charlie"]
+    </script>
+</body>
+
+</html>

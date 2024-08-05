@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function performOperation(x, y, callback) {
+    return callback(x, y);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+function subtract(x, y) {
+    return x - y;
+}
+
+function multiply(x, y) {
+    return x * y;
+}
+
+function divide(x, y) {
+  if (y === 0) 
+  {  return "Cannot divide by zero!";}
+  else {return x / y;}
+}
+  
+
+
+// Example usage
+console.log("Addtion: " + performOperation(5, 3, add)); // Output: 8
+console.log("Subtraction: " + performOperation(8, 2, subtract)); // Output: 6
+console.log("Multiplication: " + performOperation(5, 3, multiply)); // Output: 15
+console.log("Division by zero: " + performOperation(10, 0, divide)); // Output: Cannot divide by zero!
+console.log("Division: " + performOperation(10, 6, divide)); // Output: 1.6666666666666667.
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         console.log("after calling funtion");
+        function add(firstnum,secondnum,callback)
+        {
+            let add = firstnum + secondnum
+
+            callback(add);
+        }
+        function browser(answer)
+        {
+            document.write("display the value" + answer);
+        }
+
+        function myconsole (answer)
+        {
+            console.log ("display the value" +answer);
+        }
+
+        add(8, 10, browser);
+        add(8,5, myconsole);
+    </script>
+</body>
+</html>

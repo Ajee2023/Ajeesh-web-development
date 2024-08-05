@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calculateStats() {
+            let numbers = [];
+            let biggestNumber = null;
+            let smallestNumber = null;
+            let sum = 0;
+            let count = 0;
+
+            while (true) {
+                const input = prompt("Enter a number (or 'done' to finish):");
+
+                if (input.toLowerCase() === "done") {
+                 
+                    break;
+                   
+                }
+
+                const number = parseFloat(input); 
+
+               // 1D -> [1,2,9,10,5]
+
+               // 2D -> [(1,2),(5,1),(5,1)]
+               
+               // 3D -> [(1,2,3),(5,1,6),(5,1,6)]
+
+                if (!isNaN(number)) { 
+                    numbers.push(number); 
+
+                   
+                    if (biggestNumber === null || number > biggestNumber) {
+                        biggestNumber = number;
+                    }
+                    if (smallestNumber === null || number < smallestNumber) {
+                        smallestNumber = number;
+                    }
+
+                    
+                    sum += number;
+                    count++;
+                } else {
+                    alert("Invalid input. Please enter a number.");
+                }
+            }
+
+           
+            if (numbers.length > 0) { 
+                const average = sum / count;
+
+                console.log(`Biggest number: ${biggestNumber.toFixed(2)}`);
+                console.log(`Smallest number: ${smallestNumber.toFixed(2)}`);
+                console.log(`Total sum: ${sum.toFixed(2)}`);
+                console.log(`Average: ${average.toFixed(2)}`);
+            } else {
+                console.log("No numbers were entered.");
+            }
+        }
+
+        calculateStats();
+    </script>
+</body>
+
+</html>
