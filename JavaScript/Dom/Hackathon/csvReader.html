@@ -61,8 +61,8 @@
                 reader.onload = function (event) {
                     const csvData = event.target.result;
                     const twoDimArray = csvToArray(csvData);// Convert the CSV data to a two-dimensional array
-                    output.textContent = JSON.stringify(twoDimArray, null, 2); // Pretty print the array
-                    const textContent = JSON.stringify(twoDimArray, null, 2); // Pretty print the array and store temp
+                    //output.textContent = JSON.stringify(twoDimArray, null, 2); // Pretty print the array
+                    //const textContent = JSON.stringify(twoDimArray, null, 2); // Pretty print the array and store temp
                     function getTD() {// Function to create table rows and cells from the array data
                         const body = document.querySelector('tbody');
                         let tags = "";

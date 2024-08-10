@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Solar Panel - Energy Obtained</title>
+
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    table {
+      border: 1px solid #b3adad;
+      border-collapse: collapse;
+      padding: 5px;
+      margin: 0 flex;
+      /* Centers the table horizontally */
+      display: block;
+      /* Ensures the table is treated as a block-level element */
+      justify-content: center; /* Center horizontally */
+          align-items: center;
+    }
+
+    
+      .bodyStyle {
+        border: 0px;
+      }
+  
+
+    table th {
+      border: 1px solid #b3adad;
+      padding: 5px;
+      background: #f0f0f0;
+      color: #313030;
+    }
+
+    table td {
+      border: 1px solid #b3adad;
+      text-align: center;
+      padding: 5px;
+      background: #ffffff;
+      color: #313030;
+    }
+  </style>
+  
+
+  <div class="grid-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="menu-icon" onclick="openSidebar()">
+        <span class="material-icons-outlined">menu</span>
+      </div>
+      <div class="header-left">
+        <span class="material-icons-outlined">search</span>
+      </div>
+      <div class="header-right">
+        <span class="material-icons-outlined">notifications</span>
+        <span class="material-icons-outlined">email</span>
+        <span class="material-icons-outlined">account_circle</span>
+      </div>
+    </header>
+    <!-- End Header -->
+
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sidebar-title">
+        <div class="sidebar-brand">
+          <span class="material-icons-outlined">solar_power</span> Solar Panel
+        </div>
+        <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+      </div>
+
+      <ul class="sidebar-list">
+        <li class="sidebar-list-item">
+          <a href="dash-board.html" target="_blank">
+            <span class="material-icons-outlined">dashboard</span> Dashboard
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">offline_bolt</span> Energy Obtained
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="PowerUsage.html" target="_blank">
+            <span class="material-icons-outlined">power</span> Power Usage
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">health_and_safety</span> Panel Health
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">person</span> Profile
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">settings</span> Settings
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- End Sidebar -->
+
+    <main class="main-container">
+      <div class="main-title">
+        <p class="font-weight-bold">Energy Obtained</p>
+      </div>
+
+    <table class="bodyStyle">
+      <thead>
+        <tr>
+          <th>Facts category</th>
+          <th>Fixed panel</th>
+          <th>Flex panel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Avg energy saved during a day</td>
+          <td>&nbsp;600kwh</td>
+          <td>&nbsp;~900kwh</td>
+        </tr>
+        <tr>
+          <td>Avg energy saved during a monthly</td>
+          <td>&nbsp;~18000 kwh</td>
+          <td>&nbsp;33%</td>
+        </tr>
+        <tr>
+          <td>Energy loss</td>
+          <td>&nbsp;33%</td>
+          <td>&nbsp;~5%</td>
+        </tr>
+        <tr>
+          <td>Most obtained light source</td>
+          <td>&nbsp;West</td>
+          <td>&nbsp;East & West</td>
+        </tr>
+        <tr>
+          <td>Weather Network reading</td>
+          <td>&nbsp;East (sunrise) & West (sunset)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    </main>
+
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+    </body>
+
+</html>

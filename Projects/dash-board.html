@@ -37,7 +37,7 @@
       <aside id="sidebar">
         <div class="sidebar-title">
           <div class="sidebar-brand">
-            <span class="material-icons-outlined">inventory</span> Solar Panel
+            <span class="material-icons-outlined">solar_power</span> Solar Panel
           </div>
           <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
         </div>
@@ -49,28 +49,23 @@
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">inventory_2</span> Products
+            <a href="EnergyObtained.html" target="_blank">
+              <span class="material-icons-outlined"> offline_bolt </span> Energy Obtained
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="PowerUsage.html" target="_blank">
+              <span class="material-icons-outlined">power</span> Power Usage
             </a>
           </li>
           <li class="sidebar-list-item">
             <a href="#" target="_blank">
-              <span class="material-icons-outlined">fact_check</span> Inventory
+              <span class="material-icons-outlined">health_and_safety</span> Panel Health
             </a>
           </li>
           <li class="sidebar-list-item">
             <a href="#" target="_blank">
-              <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">shopping_cart</span> Sales Orders
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">poll</span> Reports
+              <span class="material-icons-outlined">person</span> Profile
             </a>
           </li>
           <li class="sidebar-list-item">
@@ -92,34 +87,34 @@
 
           <div class="card">
             <div class="card-inner">
-              <p class="text-primary">PRODUCTS</p>
-              <span class="material-icons-outlined text-blue">inventory_2</span>
+              <p class="text-primary">Energy Obtained</p>
+              <span class="material-icons-outlined text-blue">solar_power</span>
             </div>
-            <span class="text-primary font-weight-bold">249</span>
+            <span class="text-primary font-weight-bold"> 909kWh</span>
           </div>
 
           <div class="card">
             <div class="card-inner">
-              <p class="text-primary">PURCHASE ORDERS</p>
-              <span class="material-icons-outlined text-orange">add_shopping_cart</span>
+              <p class="text-primary">Power Usage</p>
+              <span class="material-icons-outlined text-orange">power</span>
             </div>
-            <span class="text-primary font-weight-bold">83</span>
+            <span class="text-primary font-weight-bold">1.5kWh</span>
           </div>
 
           <div class="card">
             <div class="card-inner">
-              <p class="text-primary">SALES ORDERS</p>
-              <span class="material-icons-outlined text-green">shopping_cart</span>
+              <p class="text-primary">Panel Health</p>
+              <span class="material-icons-outlined text-green">health_and_safety</span>
             </div>
-            <span class="text-primary font-weight-bold">79</span>
+            <span class="text-primary font-weight-bold">90%</span>
           </div>
 
           <div class="card">
             <div class="card-inner">
-              <p class="text-primary">INVENTORY ALERTS</p>
-              <span class="material-icons-outlined text-red">notification_important</span>
+              <p class="text-primary">ROI</p>
+              <span class="material-icons-outlined text-red">paid</span>
             </div>
-            <span class="text-primary font-weight-bold">56</span>
+            <span class="text-primary font-weight-bold">$250</span>
           </div>
 
         </div>
@@ -127,12 +122,12 @@
         <div class="charts">
 
           <div class="charts-card">
-            <p class="chart-title">Top 5 Products</p>
-            <div id="bar-chart"></div>
+            <p class="chart-title">Power Saved</p>
+            <div id="line-chart"></div>
           </div>
 
           <div class="charts-card">
-            <p class="chart-title">Purchase and Sales Orders</p>
+            <p class="chart-title">Solar Panel Movement Tracker</p>
             <div id="area-chart"></div>
           </div>
 

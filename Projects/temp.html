@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Solar Panel - Energy Obtained</title>
+
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .main-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      border-radius: 8px;
+      overflow: hidden; /* Ensures rounded corners work */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      background: #ffffff; /* White background for the table */
+    }
+
+    table th, table td {
+      border: 1px solid #ddd; /* Light gray border for cells */
+      padding: 12px 15px; /* Increased padding for better readability */
+      text-align: left; /* Align text to the left */
+      font-size: 16px; /* Improved font size for readability */
+    }
+
+    table th {
+      background-color: #4CAF50; /* Green background for headers */
+      color: white; /* White text color for headers */
+      font-weight: 600; /* Semi-bold font weight */
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #f9f9f9; /* Light gray background for even rows */
+    }
+
+    table tbody tr:hover {
+      background-color: #f1f1f1; /* Slightly darker background on hover */
+    }
+  </style>
+</head>
+
+<body>
+  <main class="main-container">
+    <div class="main-title">
+      <p class="font-weight-bold">Power Usage</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Power Usage</th>
+          <th>Reading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Device 1 (Mobile)</td>
+          <td>600kwh</td>
+        </tr>
+        <tr>
+          <td>Device 2 (Computer)</td>
+          <td>~18000 kwh</td>
+        </tr>
+        <tr>
+          <td>Device 3 (TV)</td>
+          <td>33%</td>
+        </tr>
+        <tr>
+          <td>Device 4 (Tablet)</td>
+          <td>West</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Scripts -->
+  <!-- ApexCharts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
