@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fetchData(url){
+            return fetch (url)
+            .then(response => response.json())
+            .catch(error => console.error(error));
+        }
+
+        fetchData('https://jsonplaceholder.typicode.com/user')
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    </script>
+</body>
+</html>

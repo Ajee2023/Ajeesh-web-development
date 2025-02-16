@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myPromise = new Promise ((resolve, reject) =>{
+            resolve(10);
+        });
+
+        myPromise
+        .then((num) => {
+            console.log (`First step: ${num}`);
+            return num * 2; 
+        })
+        .then((num) => {
+            console.log (`Second step: ${num}`);
+            return num * 2; 
+        })
+        .then((num) => {
+            console.log (`Third step: ${num}`);
+            return num * 2; 
+        })
+        .then((num) => {
+            console.log (`Final step: ${num}`);
+            return num * 2; 
+        })
+        .catch((error) => {
+            console.error ("error has been found:", error);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = 'https://www.google/pic.jpg'
+
+        function download(url, ){
+            console.log(`Inside download ...`);
+            setTimeout(() => {
+                console.log(`Downloading ${url} ...`)
+            },7000)
+        }
+
+        function show(picture) {
+            console.log(`Processing ${picture}`);
+        }
+
+        download(url);
+        show(url);
+    </script>
+</body>
+</html>

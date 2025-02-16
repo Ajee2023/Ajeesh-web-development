@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button id="myButton">Click Me</button>
+        <p id="message"></p>
+    </div>
+    <script>
+        // Get references to the button and message elements
+const button = document.getElementById("myButton");
+const message = document.getElementById("message");
+
+// Define the callback function to handle the button click
+function displayMessage() {
+    message.textContent = "Hello, World!";
+}
+
+// Attach the callback function to the button's click event
+button.addEventListener("click", displayMessage);
+    </script>
+</body>
+</html>
+
+
+

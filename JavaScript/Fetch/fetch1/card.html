@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Cards</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .user-card {
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .user-card h2 {
+            margin-bottom: 10px;
+        }
+
+        .user-card p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container" id="cardContainer">
+        </div>
+
+    <script>
+     
+        const users = [
+            { firstName: "John", lastName: "Doe", gender: "Male", email: "john.doe@example.com" },
+            { firstName: "Jane", lastName: "Smith", gender: "Female", email: "jane.smith@example.com" },
+          
+        ];
+
+        function createUserCard(user) {
+            const card = document.createElement("div");
+            card.classList.add("user-card");
+            card.innerHTML = `
+                <h2>User</h2>  
+                <p>First name: <span>${user.firstName}</span></p>
+                <p>Last name: <span>${user.lastName}</span></p>
+                <p>Gender: <span>${user.gender}</span></p>
+                <p>Email: <span>${user.email}</span></p>
+            `;
+            return card;
+        }
+
+        const cardContainer = document.getElementById("cardContainer");
+
+       
+        users.forEach(user => {
+            const card = createUserCard(user);
+            cardContainer.appendChild(card);
+        });
+
+
+    </script>
+
+</body>
+</html>

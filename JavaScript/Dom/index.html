@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Learning DOM</h1>
+    <div>
+        <p id="greeting">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p id="bye">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <input type="button" onclick="myclick()" value="click">
+        <input type="button" onclick="back()" value="back">
+        <div id="myid">Hello World</div>
+    </div>
+    <script>
+        function myclick(){
+            document.getElementById("greeting").innerHTML = "Hello world"
+        }
+
+        function myclick2(){
+            document.getElementById("bye").innerHTML = "Hi"
+        }
+
+    </script>
+</body>
+</html>

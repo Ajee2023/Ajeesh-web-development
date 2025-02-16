@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>innerHTML</h1>
+    <div class ="apple">hi world</div>
+    <div class="orange">hello world</div>
+
+
+    <button type="button" onclick = "changeDiv()">Click Me!</button>
+    <button type="button" onclick = "changeValue()">Press Me!</button>
+    <script>
+        function changeDiv(){
+        const myDiv = document.getElementsByClassName("orange");//calling a method using .
+        myDiv[0].innerHTML = "<div style = 'color:blue'>Hello <strong> World </strong></div>";
+        
+        } 
+        function changeValue(){
+        const myValue = document.getElementsByClassName("apple");
+         myValue[0].innerHTML = "<div style ='color:green'>Hi <strong> World </strong></div>";
+        }
+    </script>
+    <style>
+
+        </style>
+</body>
+</html>

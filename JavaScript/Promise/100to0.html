@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myPromise = new Promise ((resolve, reject) =>{
+            resolve(100);
+        });
+
+        myPromise
+        .then((num) => {
+            console.log (`First step: ${num}`);
+            return num - 10; 
+        })
+        .then((num) => {
+            console.log (`Second step: ${num}`);
+            return num - 10; 
+        })
+        .then((num) => {
+            console.log (`Third step: ${num}`);
+            return num - 10; 
+        })
+        .then((num) => {
+            console.log (`Fourth step: ${num}`);
+            return num - 10; 
+        })
+        .then((num) => {
+            console.log (`Fifth step: ${num}`);
+            return num - 10; 
+        })
+        .then((num) => {
+            console.log (`Sixth step: ${num}`);
+            return num - 10; 
+        })
+        .then((num) => {
+            console.log (`Seventh step: ${num}`);
+            return num - 10; 
+        })
+        .then((num) => {
+            console.log (`Eighth step: ${num}`);
+            return num - 10; 
+        })
+        .then((num) => {
+            console.log (`Ninth step: ${num}`);
+            return num - 10; 
+        })
+        .then((num) => {
+            console.log (`Final step: ${num}`);
+            return num - 10; 
+        })
+        .catch((error) => {
+            console.error ("error has been found:", error);
+        });
+    </script>
+</body>
+</html>

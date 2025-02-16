@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateInterest(principal, insterestRate, years, callback) {
+            const interest = principal * interestRate * years;
+            callback(interest);
+        }
+
+        function displayInterest(interest){
+            console.log(`The total loan interest is: $${interest.toFixed(2)}`);
+        }
+
+        const principal =10000;
+        const interestRate = 0.05;
+        const years = 5;
+
+        calculateInterest(principal, interestRate, years, displayInterest);
+    </script>
+</body>
+</html>

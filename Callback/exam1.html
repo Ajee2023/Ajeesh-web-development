@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Consider the following code
+        function fetchData(callback) {
+          console.log("Fetching data...");
+          setTimeout(function() {
+            console.log("Data fetched!");
+            const data = { name: "John", age: 25 };
+            callback(data);
+          }, 2000);
+        }
+    
+        console.log("Start");
+        fetchData(function(data) {
+          console.log("Received data:", data.name);
+        });
+        console.log("End");
+      </script>
+</body>
+</html>

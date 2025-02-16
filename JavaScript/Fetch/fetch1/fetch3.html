@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Using Fetch with Promise</title>
+</head>
+<body>
+    <h1>Using Fetch with Promise</h1>
+
+    <script>
+        fetch('./users.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.createElement('div');
+                container.style.display = 'flex';
+                container.style.flexWrap = 'wrap';
+
+                data.forEach(item => {
+                    const card = document.createElement('div');
+                    card.style.backgroundColor = 'white';
+                    card.style.padding = '20px';
+                    card.style.margin = '20px';
+                    card.style.width = '300px';
+                    card.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2)';
+                    card.style.borderRadius = '5px';
+
+                    Object.entries(item).forEach(([key, value]) => {
+                        const p = document.createElement('p');
+                        p.textContent = `${key}: ${value}`;
+                        card.appendChild(p);
+                    });
+
+                    container.appendChild(card);
+                });
+
+                document.body.appendChild(container);
+            });
+    </script>
+</body>
+</html>

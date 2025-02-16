@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>querySelector Demo</title>
+</head>
+<body>
+
+<p id="myParagraph">This is a paragraph.</p>
+<p id="mySentence">word</p>
+<button onclick="changeText()">Change Text</button>
+<button onclick="changeWords()">change Words</button>
+<script>
+function changeText() {
+  const paragraph = document.querySelector("#myParagraph"); // Selects the paragraph by ID
+  if (paragraph) { // Check if the element was found
+    paragraph.textContent = "Text changed using querySelector!";
+  }
+}
+function changeWords(){
+  const words = document.querySelector("#mySentence");
+  if (words){
+    words.textContent = "Text changed by querySelector";
+  }
+}
+</script>
+
+</body>
+</html>

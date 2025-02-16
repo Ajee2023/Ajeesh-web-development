@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myDisplayer(some){
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        let myPromise = new Promise(function (MyResolve, MyReject){
+            let x = 0;
+
+            if (x== 0){
+                MyResolve("OK");
+            }else{
+                MyReject("Error");
+            }
+        });
+
+        myPromise.then(function (value){
+            myDisplayer(value);
+        }, function (error) {
+            myDisplayer(error);
+        });
+        
+    </script>
+</body>
+</html>

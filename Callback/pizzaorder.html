@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function placeOrder(pizzaType, callback){
+            console.log(`Placing order for ${pizzaType} pizza...`);
+            document.write(`<br> Placing order for ${pizzaType} pizza...`);
+
+            setTimeout(function (){
+                callback(pizzaType);
+            },2000)
+        }
+
+        function orderReady(pizzaType){
+            console.log(`${pizzaType} pizza is ready for pickup!`);
+            document.write(`<br> ${pizzaType} pizza is ready for pickup!`);
+        }
+
+        placeOrder("Pepperoni", orderReady);
+    </script>
+</body>
+</html>
