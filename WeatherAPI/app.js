@@ -19,7 +19,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
 function getWeatherData(city) {
   return new Promise((resolve, reject) => {
     // Step 1: Get latitude and longitude using Geocoding API
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=90&lon=90&appid=f76c736b39c4b4728547f379a0cb5c4e`)
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${appid}`)
       .then((response) => response.json())
       .then((geoData) => {
         if (geoData.length === 0) {
@@ -51,7 +51,7 @@ function displayWeather(data) {
   weatherInfo.innerHTML = `
     <h2>${data.name}, ${data.sys.country}</h2>
     <p>${data.weather[0].description}</p>
-    <p>Temperature: ${data.main.temp}Â°C</p>
+    <p>Temperature: ${data.main.temp}°C</p>
     <p>Humidity: ${data.main.humidity}%</p>
     <p>Wind Speed: ${data.wind.speed} m/s</p>
   `;

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drag and Drop</title>
+    <style>
+        /* makes the boxes and allows the boxes to be touched by mouse*/
+        .draggable {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: absolute;
+            cursor: grab;
+        }
+
+        .draggable:active {
+            cursor: grabbing;
+        }
+    </style>
+</head>
+
+<body>
+    <!--defining the pixels of the sqaure-->
+    <div class="draggable" id="object1" style="left: 50px; top: 50px;"></div>
+    <div class="draggable" id="object2" style="left: 200px; top: 150px;"></div>
+    <div class="draggable" id="object3" style="left: 350px; top: 250px;"></div>
+
+    <script>
+        // declare draggable to be called
+        const draggables = document.querySelectorAll('.draggable');
+
+        // allows the mouse to be able to move the boxes around the screen
+        draggables.forEach(draggable => {
+            let isDragging = false;
+            let offsetX, offsetY;
+
+            // signals the element that the objects are being dragged
+            draggable.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offsetX = e.clientX - draggable.getBoundingClientRect().left;// calculates the y and x values of where the objects are
+                offsetY = e.clientY - draggable.getBoundingClientRect().top;
+                draggable.style.zIndex = "100"; //bring to front
+
+                document.addEventListener('mousemove', drag);
+                document.addEventListener('mouseup', stopDrag);
+            });
+            // shows the object being moved by ur input
+            function drag(e) {
+                if (!isDragging) return;
+
+                const x = e.clientX - offsetX;
+                const y = e.clientY - offsetY;
+
+                draggable.style.left = x + 'px';
+                draggable.style.top = y + 'px';
+            }
+
+           // resets the z-index 
+            function stopDrag() {
+                isDragging = false;
+                document.removeEventListener('mousemove', drag);
+                document.removeEventListener('mouseup', stopDrag);
+                draggable.style.zIndex = "auto"; 
+            }
+        });
+    </script>
+
+</body>
+
+</html>
