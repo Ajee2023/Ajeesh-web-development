@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market Data</title>
+    <title>Stock Market App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="market-container">
-        <h2>Markets</h2>
-        <div id="market-data">
-            </div>
-        <button id="see-market">See market</button>
+    <div class="div-container">
+        <input type="text" id="searchInput" placeholder="Enter Stock Symbol">
+        <button onclick="searchStock()">Search</button>
+        <div id="symbol"></div>
+        <div id="price"></div>
+        <div id="change"></div>
     </div>
     <script src="script.js"></script>
 </body>

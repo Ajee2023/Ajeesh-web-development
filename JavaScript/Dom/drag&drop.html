@@ -1,70 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Drag and Drop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Between Sections</title>
     <style>
-        /* makes the boxes and allows the boxes to be touched by mouse*/
-        .draggable {
-            width: 100px;
-            height: 100px;
-            background-color: lightblue;
-            position: absolute;
-            cursor: grab;
+        /* prettify */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
 
-        .draggable:active {
-            cursor: grabbing;
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .list {
+            list-style-type: none;
+            padding: 0;
+            width: 200px;
+            border: 1px solid #ccc;
+            min-height: 150px;
+            padding: 10px;
+        }
+
+        .list-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            cursor: grab;
+            text-align: center;
+        }
+
+        .list-item.dragging {
+            opacity: 0.5;
+        }
+
+        h2 {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 
 <body>
-    <!--defining the pixels of the sqaure-->
-    <div class="draggable" id="object1" style="left: 50px; top: 50px;"></div>
-    <div class="draggable" id="object2" style="left: 200px; top: 150px;"></div>
-    <div class="draggable" id="object3" style="left: 350px; top: 250px;"></div>
+    <h1>Drag & Drop Between Sections</h1>
+    <div class="container">
+        <!--name tags for lists-->
+        <div>
+            <h2>homework to do</h2>
+            <ul class="list" id="list1">
+                <li class="list-item" draggable="true">Science</li>
+                <li class="list-item" draggable="true">Math</li>
+                <li class="list-item" draggable="true">English</li>
+            </ul>
+        </div>
+        <div>
+            <h2>finished homework</h2>
+            <ul class="list" id="list2">
+                <li class="list-item" draggable="true">Geo</li>
+                <li class="list-item" draggable="true">History</li>
+                <li class="list-item" draggable="true">French</li>
+            </ul>
+        </div>
+    </div>
 
     <script>
-        // declare draggable to be called
-        const draggables = document.querySelectorAll('.draggable');
+        // Select both lists
+        const list1 = document.getElementById('list1');
+        const list2 = document.getElementById('list2');
 
-        // allows the mouse to be able to move the boxes around the screen
-        draggables.forEach(draggable => {
-            let isDragging = false;
-            let offsetX, offsetY;
+        let draggedItem = null;
 
-            // signals the element that the objects are being dragged
-            draggable.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                offsetX = e.clientX - draggable.getBoundingClientRect().left;// calculates the y and x values of where the objects are
-                offsetY = e.clientY - draggable.getBoundingClientRect().top;
-                draggable.style.zIndex = "100"; //bring to front
-
-                document.addEventListener('mousemove', drag);
-                document.addEventListener('mouseup', stopDrag);
+        // Add event listeners to both lists
+        [list1, list2].forEach(list => {
+            list.addEventListener('dragstart', (e) => {
+                draggedItem = e.target;
+                e.target.classList.add('dragging');
             });
-            // shows the object being moved by ur input
-            function drag(e) {
-                if (!isDragging) return;
 
-                const x = e.clientX - offsetX;
-                const y = e.clientY - offsetY;
+            list.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                const afterElement = getDragAfterElement(list, e.clientY);
+                const currentItem = document.querySelector('.dragging');
+                if (afterElement == null) {
+                    list.appendChild(currentItem);
+                } else {
+                    list.insertBefore(currentItem, afterElement);
+                }
+            });
 
-                draggable.style.left = x + 'px';
-                draggable.style.top = y + 'px';
-            }
-
-           // resets the z-index 
-            function stopDrag() {
-                isDragging = false;
-                document.removeEventListener('mousemove', drag);
-                document.removeEventListener('mouseup', stopDrag);
-                draggable.style.zIndex = "auto"; 
-            }
+            list.addEventListener('dragend', (e) => {
+                e.target.classList.remove('dragging');
+            });
         });
-    </script>
 
+        // determine where to insert the dragged item
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.list-item:not(.dragging)')];
+
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
+    </script>
 </body>
 
 </html>

@@ -1,72 +1,53 @@
 body {
     font-family: sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
-}
-
-#market-data {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between columns */
-}
-
-.market-column {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.market-item {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #E0F2F7, #B2EBF2); /* Gradient background */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
+    min-height: 100vh;
 }
 
-.market-item:last-child {
-    border-bottom: none;
+.div-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
 }
 
-.market-item .market-name {
-    flex-grow: 1;
-    font-weight: 500;
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.market-item .market-value {
-    text-align: right;
-}
-
-.market-item .percentage-change {
-    font-weight: bold;
-}
-
-.market-item .down {
-    color: red;
-}
-
-.market-item .up {
-    color: green;
-}
-
-#see-market {
-    margin-top: 20px;
+button {
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    display: block;
-    margin: 20px auto 0;
 }
 
-.column-title {
-    font-size: 1.5em;
+#symbol {
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
+    margin-top: 10px;
+}
+
+#price {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#change {
+    font-size: 18px;
+    margin-top: 5px;
 }

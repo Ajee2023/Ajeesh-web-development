@@ -1,58 +1,44 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const marketData = document.getElementById('market-data');
+const apiKey = 'JAATO72WNV3KZUCT';
 
-   
-    const mockData = [
-        {
-            full_name: "TSX Index",
-            short_name: "TSX",
-            percentage_change: "+1.44%",
-            current_value: "25,147.03",
-            trend: "up"
-        },
-        {
-            full_name: "DOW",
-            short_name: "DJI",
-            percentage_change: "-1.69%",
-            current_value: "43,426.02",
-            trend: "down"
-        },
-        {
-            full_name: "S&P 500",
-            short_name: "INX",
-            percentage_change: "-1.71%",
-            current_value: "6,013.12",
-            trend: "down"
-        },
-        {
-            full_name: "NASDAQ",
-            short_name: "COMP",
-            percentage_change: "-2.20%",
-            current_value: "19,524.01",
-            trend: "down"
-        },
-        {
-            full_name: "CAD/USD Canadian Dollar/United States Dollar",
-            short_name: "CAD/USD",
-            percentage_change: "-0.33%",
-            current_value: "0.702",
-            trend: "down"
+async function getStockData(symbol) {
+    const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const globalQuote = data['Global Quote'];
+        if (globalQuote) {
+            return {
+                symbol: globalQuote['01. symbol'],
+                price: globalQuote['05. price'],
+                change: globalQuote['09. change'],
+                changePercent: globalQuote['10. change percent']
+            };
+        } else {
+            return null;
         }
-    ];
+    } catch (error) {
+        console.error('Error fetching stock data:', error);
+        return null;
+    }
+}
 
-    mockData.forEach(item => {
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('market-item');
-        itemDiv.innerHTML = `
-            <div class="market-name">
-                <div>${item.full_name}</div>
-                <div>${item.short_name}</div>
-            </div>
-            <div class="market-value">
-                <div class="percentage-change ${item.trend}">${item.percentage_change}</div>
-                <div>${item.current_value}</div>
-            </div>
-        `;
-        marketData.appendChild(itemDiv);
-    });
-});
+async function searchStock() {
+    const symbol = document.getElementById('searchInput').value.toUpperCase();
+    const stockData = await getStockData(symbol);
+
+    if (stockData) {
+        document.getElementById('symbol').textContent = stockData.symbol;
+        document.getElementById('price').textContent = `$${stockData.price}`;
+        document.getElementById('change').textContent = `${stockData.change} (${stockData.changePercent})`;
+
+        if (parseFloat(stockData.change) >= 0) {
+            document.getElementById('change').style.color = 'green';
+        } else {
+            document.getElementById('change').style.color = 'red';
+        }
+    } else {
+        document.getElementById('symbol').textContent = 'Stock not found';
+        document.getElementById('price').textContent = '';
+        document.getElementById('change').textContent = '';
+    }
+}
