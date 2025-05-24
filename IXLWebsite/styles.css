@@ -592,7 +592,6 @@ h1 {
     pointer-events: none;
     z-index: 1;
 }
-
 .decor-circle {
     position: absolute;
     border-radius: 50%;
