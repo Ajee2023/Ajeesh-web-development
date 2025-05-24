@@ -1,0 +1,40 @@
+table {
+  width: 100%; /* Make the table take up the whole width of its container */
+  border-collapse: collapse; /* Make the borders of the cells and the table stick together nicely */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Add a light gray border around each cell (th = header cell, td = data cell) */
+  padding: 8px; /* Give some space inside each cell so the text isn't cramped */
+  text-align: left; /* Make the text inside the cells line up on the left */
+}
+
+th {
+  background-color: #f2f2f2; /* Give the header row a light gray background */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Make every even-numbered row a slightly different shade of gray for better readability */
+}
+
+tr:hover {
+  background-color: #e0f7fa; /* When you hover your mouse over a row, make it turn a light blue color */
+  cursor: pointer; /* Change the mouse cursor to a pointer when you hover over a row, suggesting you can click it */
+}
+
+.details-row {
+  background-color: #f0f0f0; /* Style for the extra row that shows employee details, make it a light gray */
+}
+
+.details-row td {
+  padding: 15px; /* Give more padding to the details row so the info isn't too squished */
+}
+
+.icon-cell {
+  text-align: center; /* Center the content (our arrow icon) in this specific cell */
+  width: 30px; /* Make this cell a fixed width */
+}
+
+.icon-cell span {
+  cursor: pointer; /* Make the arrow icon clickable */
+}

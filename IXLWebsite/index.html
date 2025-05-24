@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IXL Learning - Personalized Learning for Every Student</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">IXL Learning</div>
+        <nav>
+            <ul>
+                <li><a href="#">Math</a></li>
+                <li><a href="#">Language Arts</a></li>
+                <li><a href="#">Science</a></li>
+                <li><a href="#">Social Studies</a></li>
+                <li><button class="signup-btn" id="signupBtn">Sign Up</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="learning.html" class="top-bar-link" target="_blank">Learning</a>
+            <span>Diagnostic</span>
+            <span>Analytics</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="membership.html" class="membership-link" target="_blank">MEMBERSHIP</a>
+        </div>
+    </div>
+
+    <div class="popup" id="signupPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <div class="popup-graphic-container">
+                <img src="image_ed916f.png" alt="Learning graphic" class="popup-graphic">
+                <div class="ixl-logo-overlay">IXL</div> </div>
+            <div class="popup-form-container">
+                <h2>Create an Account</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" required placeholder="Create a password">
+                    </div>
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                    <p>Not a member yet? <a href="#">Join now ></a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <h1>Personalized Learning for Every Student</h1>
+        <p class="subtitle">Master any concept with our comprehensive curriculum and adaptive technology.</p>
+
+        <section class="hero-features-section">
+            <div class="hero-background-decorations">
+                <div class="decor-circle circle-1"></div>
+                <div class="decor-circle circle-2"></div>
+                <div class="decor-circle circle-3"></div>
+                <div class="decor-circle circle-4"></div>
+                <div class="decor-circle circle-5"></div>
+                <div class="decor-circle circle-6"></div>
+            </div>
+            <div class="hero-content-wrapper">
+                <h2>IXL is personalized learning</h2>
+                <div class="feature-clouds-container">
+                    <div class="feature-cloud">
+                        <h3>Comprehensive K-12 curriculum</h3>
+                        <p>Math • English • Science</p>
+                        <a href="#" class="more-info-arrow"></a>
+                    </div>
+                    <div class="feature-cloud">
+                        <h3>Trusted by educators and parents</h3>
+                        <p>Over <strong>160 billion</strong> questions answered</p>
+                        <p>More than <strong>17 million</strong> students use IXL</p>
+                        <a href="#" class="more-info-arrow"></a>
+                    </div>
+                    <div class="feature-cloud">
+                        <h3>Immersive learning experience</h3>
+                        <p>Analytics • Recommendations</p>
+                        <p>Real-Time Diagnostic • Awards</p>
+                        <a href="#" class="more-info-arrow"></a>
+                    </div>
+                </div>
+                <button class="become-member-btn">Become a member!</button>
+            </div>
+        </section>
+        <div class="grades-container">
+            <div class="grades-column">
+                <div class="grade-section">
+                    <div class="grade-title">Kindergarten</div>
+                    <div class="subject">Math: Counting, number recognition, shapes, ...</div>
+                    <div class="subject">ELA: Alphabet, phonics, early reading, ...</div>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 1</div>
+                    <div class="subject">Math: Addition & subtraction within 20, place value, ...</div>
+                    <div class="subject">ELA: Phonics, reading fluency, basic comprehension, ...</div>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 2</div>
+                    <div class="subject">Math: Addition, subtraction, ...</div>
+                    <div class="subject">ELA: Reading skills, ...</div>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 3</div>
+                    <div class="subject">Math: Multiplication, division, ...</div>
+                    <div class="subject">ELA: Grammar, writing, ...</div>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 4</div>
+                    <div class="subject">Math: Fractions, decimals, ...</div>
+                    <div class="subject">ELA: Vocabulary, comprehension, ...</div>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 5</div>
+                    <div class="subject">Math: Algebra basics, geometry, ...</div>
+                    <div class="subject">ELA: Research, analysis, ...</div>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 6</div>
+                    <div class="subject">Math: Ratios, expressions, basic statistics, ...</div>
+                    <div class="subject">ELA: Argumentative writing, informational texts, ...</div>
+                </div>
+            </div>
+
+            <div class="grades-column">
+                <div class="grade-section">
+                    <div class="grade-title">Grade 7</div>
+                    <div class="subject">Math: Rational numbers, linear equations, geometry, ...</div>
+                    <div class="subject">ELA: Research, literary analysis, persuasive writing, ...</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 8</div>
+                    <div class="subject">Math: Functions, real numbers, Pythagorean theorem, ...</div>
+                    <div class="subject">ELA: Primary/secondary sources, literary criticism, ...</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 9</div>
+                    <div class="subject">Math: Algebra I, data analysis, ...</div>
+                    <div class="subject">ELA: World literature, argumentative essays, ...</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 10</div>
+                    <div class="subject">Math: Geometry, Algebra II, ...</div>
+                    <div class="subject">ELA: American literature, research papers, ...</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 11</div>
+                    <div class="subject">Math: Pre-Calculus, statistics, ...</div>
+                    <div class="subject">ELA: British literature, critical analysis, ...</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+
+                <div class="grade-section">
+                    <div class="grade-title">Grade 12</div>
+                    <div class="subject">Math: Calculus, AP Statistics, ...</div>
+                    <div class="subject">ELA: Contemporary literature, advanced composition, ...</div>
+                    <a href="#" class="learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

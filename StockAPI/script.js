@@ -1,4 +1,4 @@
-const apiKey = 'JAATO72WNV3KZUCT';
+const apiKey = 'JAATO72WNV3KZUCT'; // Replace with your Alpha Vantage API key
 
 async function getStockData(symbol) {
     const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
@@ -27,18 +27,29 @@ async function searchStock() {
     const stockData = await getStockData(symbol);
 
     if (stockData) {
-        document.getElementById('symbol').textContent = stockData.symbol;
-        document.getElementById('price').textContent = `$${stockData.price}`;
-        document.getElementById('change').textContent = `${stockData.change} (${stockData.changePercent})`;
+        document.getElementById('stockSymbol').textContent = stockData.symbol;
+        document.getElementById('stockPrice').textContent = `$${stockData.price}`;
 
+        // Example Metrics (Replace with actual API data if available)
+        document.getElementById('marketCap').textContent = '1.5T'; // Placeholder
+        document.getElementById('volume').textContent = '25M'; // Placeholder
+
+        // Display up or down arrow
+        const arrowDisplay = document.getElementById('arrowDisplay');
         if (parseFloat(stockData.change) >= 0) {
-            document.getElementById('change').style.color = 'green';
+            arrowDisplay.textContent = '▲'; // Up arrow
+            arrowDisplay.style.color = 'green';
         } else {
-            document.getElementById('change').style.color = 'red';
+            arrowDisplay.textContent = '▼'; // Down arrow
+            arrowDisplay.style.color = 'red';
         }
     } else {
-        document.getElementById('symbol').textContent = 'Stock not found';
-        document.getElementById('price').textContent = '';
-        document.getElementById('change').textContent = '';
+        document.getElementById('stockSymbol').textContent = 'Stock not found';
+        document.getElementById('stockPrice').textContent = '';
+        document.getElementById('marketCap').textContent = '';
+        document.getElementById('volume').textContent = '';
+        document.getElementById('arrowDisplay').textContent = ''; // Clear arrow
     }
 }
+
+document.getElementById('searchButton').addEventListener('click', searchStock);

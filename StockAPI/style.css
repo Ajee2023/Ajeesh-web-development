@@ -2,52 +2,84 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #E0F2F7, #B2EBF2); /* Gradient background */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: linear-gradient(135deg, #A8E0DA, #63A4FF); /* Gradient background */
 }
 
-.div-container {
-    background-color: white;
+.container {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
     width: 300px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-input[type="text"] {
-    width: 80%;
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    outline: none;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+.search-bar button {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
     border: none;
-    border-radius: 5px;
+    border-radius: 0 20px 20px 0;
+    padding: 10px 15px;
     cursor: pointer;
 }
 
-#symbol {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
+.arrow {
+    font-size: 60px; /* Adjust size as needed */
+    margin-bottom: 10px;
 }
 
-#price {
-    font-size: 36px;
+.price {
+    font-size: 48px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-bottom: 5px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-#change {
+.symbol {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.metrics {
+    display: flex;
+    justify-content: space-around;
+}
+
+.metric {
+    text-align: center;
+}
+
+.value {
     font-size: 18px;
-    margin-top: 5px;
+    font-weight: bold;
+    display: block;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
 }

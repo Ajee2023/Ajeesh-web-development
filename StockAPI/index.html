@@ -5,12 +5,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="div-container">
-        <input type="text" id="searchInput" placeholder="Enter Stock Symbol">
-        <button onclick="searchStock()">Search</button>
-        <div id="symbol"></div>
-        <div id="price"></div>
-        <div id="change"></div>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search Stocks">
+            <button id="searchButton">Q</button> 
+        </div>
+        <div class="arrow" id="arrowDisplay"></div>
+        <div class="price" id="stockPrice"></div>
+        <div class="symbol" id="stockSymbol"></div>
+        <div class="metrics">
+            <div class="metric">
+                <span class="value" id="marketCap"></span>
+                <span class="label">Market Cap</span>
+            </div>
+            <div class="metric">
+                <span class="value" id="volume"></span>
+                <span class="label">Volume</span>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
