@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Fetcher</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .loading {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .user-data {
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            display: none;
+        }
+        
+        .user-field {
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .field-label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Data Fetcher</h1>
+        
+        <button class="btn" id="fetchBtn">Fetch User Data</button>
+        
+        <div id="status" class="status"></div>
+        
+        <div id="userData" class="user-data">
+            <h2>User Information</h2>
+            <div class="user-field">
+                <span class="field-label">Name:</span> <span id="userName"></span>
+            </div>
+            <div class="user-field">
+                <span class="field-label">Email:</span> <span id="userEmail"></span>
+            </div>
+            <div class="user-field">
+                <span class="field-label">Phone:</span> <span id="userPhone"></span>
+            </div>
+            <div class="user-field">
+                <span class="field-label">Website:</span> <span id="userWebsite"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fetchBtn = document.getElementById('fetchBtn');
+        const statusDiv = document.getElementById('status');
+        const userDataDiv = document.getElementById('userData');
+        
+        fetchBtn.addEventListener('click', fetchUser);
+        
+        async function fetchUser() {
+            // Reset UI
+            userDataDiv.style.display = 'none';
+            statusDiv.style.display = 'block';
+            statusDiv.className = 'status loading';
+            statusDiv.textContent = 'Fetching user data...';
+            
+            try {
+                const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const user = await response.json();
+                
+                // Update UI with user data
+                document.getElementById('userName').textContent = user.name;
+                document.getElementById('userEmail').textContent = user.email;
+                document.getElementById('userPhone').textContent = user.phone;
+                document.getElementById('userWebsite').textContent = user.website;
+                
+                // Show success
+                statusDiv.textContent = 'User data received successfully!';
+                statusDiv.className = 'status';
+                userDataDiv.style.display = 'block';
+                
+            } catch (error) {
+                // Show error
+                statusDiv.textContent = `Error fetching user: ${error.message}`;
+                statusDiv.className = 'status error';
+                console.error('Error fetching user:', error);
+            }
+        }
+    </script>
+</body>
+</html>

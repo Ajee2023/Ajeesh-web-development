@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IXL Learning - Grades & Subjects</title>
-    <link rel="stylesheet" href="styles.css"> </head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
     <header>
         <div class="logo">IXL Learning</div>
         <nav>
             <ul>
-                <li><a href="#">Math</a></li>
-                <li><a href="#">Language Arts</a></li>
-                <li><a href="#">Science</a></li>
-                <li><a href="#">Social Studies</a></li>
+                <li><a href="#" data-subject="math">Math</a></li>
+                <li><a href="#" data-subject="language-arts">Language Arts</a></li>
+                <li><a href="#" data-subject="science">Science</a></li>
+                <li><a href="#" data-subject="social-studies">Social Studies</a></li>
                 <li><button class="signup-btn" id="signupBtn">Sign Up</button></li>
             </ul>
         </nav>
@@ -21,7 +22,7 @@
 
     <div class="top-bar">
         <div class="top-bar-left">
-            <span class="top-bar-link">Learning</span>
+           <a href="learning.html" class="top-bar-link">Learning</a>
             <span>Diagnostic</span>
             <span>Analytics</span>
         </div>
@@ -31,136 +32,593 @@
     </div>
 
     <section class="learning-page-hero">
-        <p>Gain fluency and confidence in Math! IXL students master essential skills at their own pace through fun and interactive questions, built in support and motivating awards.</p>
+        <h1 id="heroTitle">Explore Our Curriculum</h1>
+        <p id="heroSubtitle">Gain fluency and confidence in various subjects! IXL students master essential skills at their own pace through fun and interactive questions, built-in support, and motivating awards.</p>
     </section>
 
-    <div class="grade-level-container">
-        <div class="grade-level-card">
+    <div class="grade-level-container" id="gradeContainer">
+        <div class="grade-level-card" id="jk" data-subject="math">
             <div class="grade-icon jk">JK</div>
             <div class="grade-content">
-                <div class="grade-title-small">Junior kindergarten</div>
-                <div class="grade-subjects">Includes: Inside and outside | Above and below | Same and different | Wide and narrow | Light and heavy</div>
+                <div class="grade-title-small">Junior Kindergarten Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Inside and outside |
+                        Above and below | Same and different | Wide and narrow |
+                        Light and heavy...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Inside and outside</li>
+                            <li>Above and below</li>
+                            <li>Same and different</li>
+                            <li>Wide and narrow</li>
+                            <li>Light and heavy</li>
+                            <li>Count objects - up to 3</li>
+                            <li>Count dots - up to 3</li>
+                            <li>Count shapes - up to 3</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button orange">See all 76 skills ></button>
+            <button class="skills-button orange toggle-skills-button">See all 76 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="kindergarten" data-subject="math">
             <div class="grade-icon k">K</div>
             <div class="grade-content">
-                <div class="grade-title-small">Kindergarten</div>
-                <div class="grade-subjects">Includes: Names of numbers - up to 10 | Count groups of ten | Add with pictures - sums up to 5 | Seasons | Put numbers up to 10 in order</div>
+                <div class="grade-title-small">Kindergarten Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Names of numbers - up to 10 |
+                        Count groups of ten | Add with pictures - sums up to 5 | Seasons |
+                        Put numbers up to 10 in order...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Names of numbers - up to 10</li>
+                            <li>Count groups of ten</li>
+                            <li>Add with pictures - sums up to 5</li>
+                            <li>Seasons</li>
+                            <li>Put numbers up to 10 in order</li>
+                            <li>**Count to 3:** Learn to count, count objects, count dots, count shapes, count on ten frames, show numbers on ten frames, represent numbers</li>
+                            <li>**Count to 5:** Learn to count, count objects, count dots, count shapes, count on ten frames, show numbers on ten frames, represent numbers, what number comes next?</li>
+                            <li>**Count to 10:** Learn to count, count objects, count dots, count shapes, count on ten frames, show numbers on ten frames, represent numbers</li>
+                            <li>**Count to 20:** Learn to count, count objects, count dots, count shapes, count on ten frames, show numbers on ten frames, represent numbers</li>
+                            <li>**Comparing:** Are there enough?, more, fewer, fewer and more - compare by counting, compare in a mixed group</li>
+                            <li>**Positions:** Inside and outside, above and below, beside and next to, left and right, left, middle and right, top and bottom, top, middle and bottom</li>
+                            <li>**Classify:** Same, different, same and different, classify shapes by colour, classify and sort by colour, classify and sort by shape</li>
+                            <li>**Patterns:** Colour patterns, size patterns, shape patterns, what comes next?</li>
+                            <li>**Size:** Long and short, tall and short, wide and narrow, light and heavy, holds more or less, compare size, weight and capacity</li>
+                            <li>**Money:** Coin values - nickel and dime, coin values - quarter, loonie and toonie, coin values - all coins</li>
+                            <li>**Flat shapes:** Name the shape, circles, squares, triangles, rectangles, circles, squares and triangles</li>
+                            <li>**Solid shapes:** Flat and solid shapes, name the solid shape, spheres, cubes, cones, cylinders, select solid shapes</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button green">See all 191 skills ></button>
+            <button class="skills-button green toggle-skills-button">See all 191 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade1" data-subject="math">
             <div class="grade-icon grade1">1</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 1</div>
-                <div class="grade-subjects">Includes: Hundred chart | Compare money amounts | Purchases: do you have enough money? | Shape patterns | Months of the year</div>
+                <div class="grade-title-small">Grade 1 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Hundred chart |
+                        Compare money amounts | Purchases: do you have enough money? | Shape patterns |
+                        Months of the year...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Hundred chart</li>
+                            <li>Compare money amounts</li>
+                            <li>Purchases: do you have enough money?</li>
+                            <li>Shape patterns</li>
+                            <li>Months of the year</li>
+                            <li>Addition & subtraction within 20</li>
+                            <li>Place value up to 100</li>
+                            <li>Basic geometry (2D shapes)</li>
+                            <li>Telling time to the hour and half hour</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button purple">See all 228 skills ></button>
+            <button class="skills-button purple toggle-skills-button">See all 228 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade2" data-subject="math">
             <div class="grade-icon grade2">2</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 2</div>
-                <div class="grade-subjects">Includes: Greatest and least word problems - up to 1000 | Repeating patterns | Add multiples of 10 | Add and subtract numbers up to 100 | Symmetry</div>
+                <div class="grade-title-small">Grade 2 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Greatest and least word problems - up to 1000 | Repeating patterns | Add multiples of 10 |
+                        Add and subtract numbers up to 100 | Symmetry...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Greatest and least word problems - up to 1000</li>
+                            <li>Repeating patterns</li>
+                            <li>Add multiples of 10</li>
+                            <li>Add and subtract numbers up to 100</li>
+                            <li>Symmetry</li>
+                            <li>Two-digit addition and subtraction</li>
+                            <li>Introduction to multiplication and division</li>
+                            <li>Money (counting coins and bills)</li>
+                            <li>Data and graphing</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button green">See all 290 skills ></button>
+            <button class="skills-button green toggle-skills-button">See all 290 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade3" data-subject="math">
             <div class="grade-icon grade3">3</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 3</div>
-                <div class="grade-subjects">Includes: Multiply numbers ending in zeros | Multi-step word problems | Compare units of length | Acute, obtuse and right triangles | Add and subtract decimals</div>
+                <div class="grade-title-small">Grade 3 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Multiply numbers ending in zeros | Multi-step word problems | Compare units of length |
+                        Acute, obtuse and right triangles | Add and subtract decimals...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Multiply numbers ending in zeros</li>
+                            <li>Multi-step word problems</li>
+                            <li>Compare units of length</li>
+                            <li>Acute, obtuse and right triangles</li>
+                            <li>Add and subtract decimals</li>
+                            <li>Multiplication and division facts</li>
+                            <li>Fractions (understanding, comparing)</li>
+                            <li>Area and perimeter</li>
+                            <li>Time (to the minute)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button red">See all 425 skills ></button>
+            <button class="skills-button red toggle-skills-button">See all 425 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade4" data-subject="math">
             <div class="grade-icon grade4">4</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 4</div>
-                <div class="grade-subjects">Includes: Rounding | Divisibility rules | Number patterns: word problems | Is it a polygon? | Add and subtract decimals up to hundredths: word problems</div>
+                <div class="grade-title-small">Grade 4 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Rounding |
+                        Divisibility rules | Number patterns: word problems | Is it a polygon? |
+                        Add and subtract decimals up to hundredths: word problems...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Rounding</li>
+                            <li>Divisibility rules</li>
+                            <li>Number patterns: word problems</li>
+                            <li>Is it a polygon?</li>
+                            <li>Add and subtract decimals up to hundredths: word problems</li>
+                            <li>Multi-digit multiplication and division</li>
+                            <li>Equivalent fractions and decimals</li>
+                            <li>Lines, angles, and shapes</li>
+                            <li>Measurement conversions</li>
+                        </ul>
+                   </div>
+                </div>
             </div>
-            <button class="skills-button blue">See all 390 skills ></button>
+            <button class="skills-button blue toggle-skills-button">See all 390 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade5" data-subject="math">
             <div class="grade-icon grade5">5</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 5</div>
-                <div class="grade-subjects">Includes: Least common multiple | Multiply a decimal by a 1-digit whole number | Create line graphs | Interpret stem-and-leaf plots | Find start and end times: word problems</div>
+                <div class="grade-title-small">Grade 5 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Least common multiple |
+                        Multiply a decimal by a 1-digit whole number | Create line graphs | Interpret stem-and-leaf plots |
+                        Find start and end times: word problems...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Least common multiple</li>
+                            <li>Multiply a decimal by a 1-digit whole number</li>
+                            <li>Create line graphs</li>
+                            <li>Interpret stem-and-leaf plots</li>
+                            <li>Find start and end times: word problems</li>
+                            <li>Operations with fractions and decimals</li>
+                            <li>Volume</li>
+                            <li>Coordinate plane</li>
+                            <li>Algebraic expressions</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button orange">See all 463 skills ></button>
+            <button class="skills-button orange toggle-skills-button">See all 463 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade6" data-subject="math">
             <div class="grade-icon grade6">6</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 6</div>
-                <div class="grade-subjects">Includes: Evaluate powers | Compare temperatures above and below zero | Which is the better coupon? | Percents - calculate tax, tip, mark-up and more | Create double bar graphs</div>
+                <div class="grade-title-small">Grade 6 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Evaluate powers |
+                        Compare temperatures above and below zero | Which is the better coupon? |
+                        Percents - calculate tax, tip, mark-up and more | Create double bar graphs...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Evaluate powers</li>
+                            <li>Compare temperatures above and below zero</li>
+                            <li>Which is the better coupon?</li>
+                            <li>Percents - calculate tax, tip, mark-up and more</li>
+                            <li>Ratios and proportions</li>
+                            <li>Expressions and equations</li>
+                            <li>Integers</li>
+                            <li>Statistics and probability</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button teal">See all 381 skills ></button>
+            <button class="skills-button teal toggle-skills-button">See all 381 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade7" data-subject="math">
             <div class="grade-icon grade7">7</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 7</div>
-                <div class="grade-subjects">Includes: Model and solve equations using algebra tiles | Reflections: graph the image | Interpret charts to find mean, median, mode and range | Experimental probability | Make predictions</div>
+                <div class="grade-title-small">Grade 7 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Model and solve equations using algebra tiles | Reflections: graph the image |
+                        Interpret charts to find mean, median, mode and range | Experimental probability |
+                        Make predictions...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Model and solve equations using algebra tiles</li>
+                            <li>Reflections: graph the image</li>
+                            <li>Interpret charts to find mean, median, mode and range</li>
+                            <li>Experimental probability</li>
+                            <li>Make predictions</li>
+                            <li>Rational numbers and operations</li>
+                            <li>Linear equations and inequalities</li>
+                            <li>Geometry (angles, scale drawings)</li>
+                            <li>Probability and statistics</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button blue">See all 355 skills ></button>
+            <button class="skills-button blue toggle-skills-button">See all 355 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade8" data-subject="math">
             <div class="grade-icon grade8">8</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 8</div>
-                <div class="grade-subjects">Includes: Factors | Estimate population size using proportions | Rotations: graph the image | Converse of the Pythagorean theorem: is it a right triangle?</div>
+                <div class="grade-title-small">Grade 8 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Factors |
+                        Estimate population size using proportions | Rotations: graph the image |
+                        Converse of the Pythagorean theorem: is it a right triangle?...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Factors</li>
+                            <li>Estimate population size using proportions</li>
+                            <li>Rotations: graph the image</li>
+                            <li>Converse of the Pythagorean theorem: is it a right triangle?</li>
+                            <li>Functions</li>
+                            <li>Real numbers and exponents</li>
+                            <li>Pythagorean theorem</li>
+                            <li>Transformations (dilations, rotations, reflections, translations)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button orange">See all 315 skills ></button>
+            <button class="skills-button orange toggle-skills-button">See all 315 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade9" data-subject="math">
             <div class="grade-icon grade9">9</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 9</div>
-                <div class="grade-subjects">Includes: Solve two-step linear inequalities | Slope-intercept form: write an equation | Write an equation for a parallel or perpendicular line | Polynomial vocabulary | Identify biased samples</div>
+                <div class="grade-title-small">Grade 9 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Solve two-step linear inequalities |
+                        Slope-intercept form: write an equation | Write an equation for a parallel or perpendicular line | Polynomial vocabulary |
+                        Identify biased samples...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Solve two-step linear inequalities</li>
+                            <li>Slope-intercept form: write an equation</li>
+                            <li>Write an equation for a parallel or perpendicular line</li>
+                            <li>Polynomial vocabulary</li>
+                            <li>Identify biased samples</li>
+                            <li>Algebra I concepts (linear equations, systems, quadratics)</li>
+                            <li>Data analysis and probability</li>
+                            <li>Basic trigonometry (right triangles)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button green">See all 216 skills ></button>
+            <button class="skills-button green toggle-skills-button">See all 216 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade10" data-subject="math">
             <div class="grade-icon grade10">10</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 10</div>
-                <div class="grade-subjects">Includes: Solve a system of equations using any method: word problems | Solve a quadratic equation by factoring | Complete the square</div>
+                <div class="grade-title-small">Grade 10 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Solve a system of equations using any method: word problems |
+                        Solve a quadratic equation by factoring | Complete the square...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Solve a system of equations using any method: word problems</li>
+                            <li>Solve a quadratic equation by factoring</li>
+                            <li>Complete the square</li>
+                            <li>Geometry (proofs, theorems, transformations)</li>
+                            <li>Algebra II (polynomials, rational expressions, complex numbers)</li>
+                            <li>Circles (equations, properties)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button red">See all 306 skills ></button>
+            <button class="skills-button red toggle-skills-button">See all 306 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade11" data-subject="math">
             <div class="grade-icon grade11">11</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 11</div>
-                <div class="grade-subjects">Includes: Find the axis of symmetry of a parabola | Graph parabolas | Nth roots | Division with rational exponents | Inverses of sin, cos and tan</div>
+                <div class="grade-title-small">Grade 11 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Find the axis of symmetry of a parabola |
+                        Graph parabolas | Nth roots | Division with rational exponents |
+                        Inverses of sin, cos and tan...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Find the axis of symmetry of a parabola</li>
+                            <li>Graph parabolas</li>
+                            <li>Nth roots</li>
+                            <li>Division with rational exponents</li>
+                            <li>Inverses of sin, cos and tan</li>
+                            <li>Pre-Calculus (functions, trigonometry, sequences, series)</li>
+                            <li>Statistics (probability, normal distribution)</li>
+                            <li>Vectors and matrices</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button purple">See all 240 skills ></button>
+            <button class="skills-button purple toggle-skills-button">See all 240 skills ></button>
         </div>
 
-        <div class="grade-level-card">
+        <div class="grade-level-card" id="grade12" data-subject="math">
             <div class="grade-icon grade12">12</div>
             <div class="grade-content">
-                <div class="grade-title-small">Grade 12</div>
-                <div class="grade-subjects">Includes: Graph sine functions | Find a recursive formula | Introduction to sigma notation | Partial sums of arithmetic series | Find probabilities using the addition rule</div>
+                <div class="grade-title-small">Grade 12 Math</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Graph sine functions |
+                        Find a recursive formula | Introduction to sigma notation | Partial sums of arithmetic series |
+                        Find probabilities using the addition rule...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Graph sine functions</li>
+                            <li>Find a recursive formula</li>
+                            <li>Introduction to sigma notation</li>
+                            <li>Partial sums of arithmetic series</li>
+                            <li>Find probabilities using the addition rule</li>
+                            <li>Calculus (limits, derivatives, integrals)</li>
+                            <li>AP Statistics (inference, regression)</li>
+                            <li>Advanced topics in mathematics</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <button class="skills-button teal">See all 266 skills ></button>
+            <button class="skills-button teal toggle-skills-button">See all 266 skills ></button>
         </div>
+
+        <div class="grade-level-card" id="la-kindergarten" data-subject="language-arts" style="display: none;">
+            <div class="grade-icon k">K</div>
+            <div class="grade-content">
+                <div class="grade-title-small">Kindergarten Language Arts</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Letter recognition, phonics, sight words, early reading comprehension, writing letters and simple words...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Letter recognition</li>
+                            <li>Phonics and phonemic awareness</li>
+                            <li>Sight word recognition</li>
+                            <li>Early reading comprehension strategies</li>
+                            <li>Writing letters and simple words</li>
+                            <li>Storytelling and sequencing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="skills-button red toggle-skills-button">See all LA skills ></button>
+        </div>
+        <div class="grade-level-card" id="la-grade1" data-subject="language-arts" style="display: none;">
+            <div class="grade-icon grade1">1</div>
+            <div class="grade-content">
+                <div class="grade-title-small">Grade 1 Language Arts</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Reading fluency, story elements, grammar basics (nouns, verbs), sentence writing, vocabulary building...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Details:</p>
+                        <ul>
+                            <li>Reading fluency</li>
+                            <li>Identifying story elements (character, setting, plot)</li>
+                            <li>Basic grammar (nouns, verbs, adjectives)</li>
+                            <li>Writing simple sentences and paragraphs</li>
+                            <li>Vocabulary building through context clues</li>
+                            <li>Comparing and contrasting in texts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="skills-button red toggle-skills-button">See all LA skills ></button>
+        </div>
+        <div class="grade-level-card" id="la-grade12" data-subject="language-arts" style="display: none;">
+            <div class="grade-icon grade12">12</div>
+            <div class="grade-content">
+                <div class="grade-title-small">Grade 12 Language Arts</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Literary analysis, advanced composition, rhetorical strategies, research methodology, contemporary literature...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>In-depth literary analysis (theme, symbolism, character development)</li>
+                            <li>Advanced composition (argumentative, expository, narrative essays)</li>
+                            <li>Understanding and applying rhetorical strategies</li>
+                            <li>Comprehensive research methodology and citation</li>
+                            <li>Critical analysis of contemporary literature</li>
+                            <li>Public speaking and presentation skills</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="skills-button red toggle-skills-button">See all LA skills ></button>
+        </div>
+
+        <div class="grade-level-card" id="sci-kindergarten" data-subject="science" style="display: none;">
+            <div class="grade-icon k">K</div>
+            <div class="grade-content">
+                <div class="grade-title-small">Kindergarten Science</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Living and non-living things, weather, senses, basic forces...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Distinguishing living and non-living things</li>
+                            <li>Observing and describing weather patterns</li>
+                            <li>Understanding the five senses</li>
+                            <li>Basic concepts of pushing and pulling</li>
+                            <li>Animal habitats and characteristics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="skills-button blue toggle-skills-button">See all Science skills ></button>
+        </div>
+        <div class="grade-level-card" id="sci-grade12" data-subject="science" style="display: none;">
+            <div class="grade-icon grade12">12</div>
+            <div class="grade-content">
+                <div class="grade-title-small">Grade 12 Science</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Advanced biology, chemistry, physics, environmental science, scientific methodology and research...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>In-depth study of molecular biology and genetics</li>
+                            <li>Advanced chemical reactions and organic chemistry</li>
+                            <li>Principles of quantum physics and relativity</li>
+                            <li>Environmental impact assessment and sustainability</li>
+                            <li>Designing and conducting scientific research experiments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="skills-button blue toggle-skills-button">See all Science skills ></button>
+        </div>
+
+        <div class="grade-level-card" id="ss-kindergarten" data-subject="social-studies" style="display: none;">
+            <div class="grade-icon k">K</div>
+            <div class="grade-content">
+                <div class="grade-title-small">Kindergarten Social Studies</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: Community helpers, family roles, basic rules, holidays, maps (basic)...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Identifying community helpers and their roles</li>
+                            <li>Understanding family roles and traditions</li>
+                            <li>Learning basic rules and their importance</li>
+                            <li>Exploring holidays and celebrations</li>
+                            <li>Introduction to maps and globes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="skills-button green toggle-skills-button">See all SS skills ></button>
+        </div>
+        <div class="grade-level-card" id="ss-grade12" data-subject="social-studies" style="display: none;">
+            <div class="grade-icon grade12">12</div>
+            <div class="grade-content">
+                <div class="grade-title-small">Grade 12 Social Studies</div>
+                <div class="grade-subjects">
+                    <div class="skill-summary">
+                        Includes: World history, government and economics, sociology, civics, global issues...
+                    </div>
+                    <div class="skill-details" style="display: none;">
+                        <p>Detailed Skills:</p>
+                        <ul>
+                            <li>Comprehensive study of global historical events and their impact</li>
+                            <li>In-depth analysis of government structures and economic principles</li>
+                            <li>Exploring sociological concepts and societal changes</li>
+                            <li>Understanding civic responsibilities and human rights</li>
+                            <li>Analyzing contemporary global issues and their solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="skills-button green toggle-skills-button">See all SS skills ></button>
+        </div>
+
     </div>
 
-    <script src="script.js"></script> </body>
+    <div class="popup" id="signupPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <div class="popup-graphic-container">
+                <img src="image_ed916f.png" alt="IXL Learning Graphic" class="popup-graphic">
+            </div>
+            <div class="popup-form-container">
+                <h2>Sign Up for IXL</h2>
+                <p>Start your free 30-day trial today!</p>
+                <form id="signupForm">
+                    <input type="email" id="email" name="email" placeholder="Email address" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <button type="submit">Start your free trial</button>
+                </form>
+                <p class="popup-login-link">Already have an account? <a href="#">Log in</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

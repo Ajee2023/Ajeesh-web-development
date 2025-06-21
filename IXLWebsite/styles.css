@@ -9,6 +9,9 @@
 body {
     /* Changed background-color to a light, soft green */
     background-color: #E6F0E6; /* A very light green for the overall background */
+    /* Add fade-in animation to the body */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
 header {
@@ -18,6 +21,15 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Add fade-in animation to the header */
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.2s; /* Delay header slightly */
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .logo {
@@ -193,7 +205,6 @@ nav ul li a {
     text-decoration: underline;
 }
 
-
 main {
     padding: 30px;
     max-width: 1200px;
@@ -202,6 +213,9 @@ main {
     background: linear-gradient(to bottom, #f5f5f5, #e0f2f7); /* A subtle light grey to light blue gradient */
     border-radius: 10px; /* Optional: adds a slight rounded corner */
     box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Optional: subtle shadow */
+    /* Add fade-in animation to the main content */
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.4s; /* Delay main content slightly more */
 }
 
 h1 {
@@ -266,7 +280,6 @@ h1 {
     opacity: 0.8;
 }
 /* End of updated CSS for the top bar */
-
 
 /* NEW CSS for the membership cards (for membership.html) */
 .membership-cards-section {
@@ -338,7 +351,6 @@ h1 {
 .membership-card.classrooms .card-icon { background-color: #e0f2f7; color: #26A69A; } /* Light turquoise */
 .membership-card.schools .card-icon { background-color: #e0f2f7; color: #2196F3; } /* Light blue */
 
-
 .membership-card p {
     font-size: 15px;
     color: #555;
@@ -388,14 +400,12 @@ h1 {
 .membership-card.schools .card-button-secondary { border-color: #2196F3; color: #2196F3; }
 .membership-card.schools .card-button-secondary:hover { background-color: #2196F3; color: white; }
 
-
 .membership-card .card-button-secondary:hover {
     background-color: #2d5f8b;
     color: white;
 }
 
 /* End of NEW CSS for the membership cards */
-
 
 /* NEW CSS for the learning page (for learning.html) */
 .learning-page-hero {
@@ -475,7 +485,6 @@ h1 {
 .grade-icon.grade11 { background-color: #9C27B0; } /* Purple */
 .grade-icon.grade12 { background-color: #00BCD4; } /* Cyan */
 
-
 .grade-content {
     flex-grow: 1; /* Allows content to take available space */
     text-align: left;
@@ -515,6 +524,534 @@ h1 {
 .skills-button.purple { background-color: #9C27B0; }
 .skills-button.teal { background-color: #009688; }
 
+.skills-button:hover {
+    opacity: 0.9;
+}
+/* End of NEW CSS for the learning page */
+
+.grades-container {
+    display: flex;
+    gap: 20px;
+    /* Added background for the grade container itself to match the image structure if desired */
+    /* If you want the gradient to cover this area specifically, you might use a separate background here */
+    background-color: white; /* Or transparent if you want main's gradient to show through */
+    padding: 20px; /* Example padding */
+    border-radius: 10px; /* Example border-radius */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Example shadow */
+    margin-top: 30px; /* Space from content above */
+}
+
+.grades-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grade-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.grade-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subject {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.learn-more {
+    color: #2d5f8b;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.hero-features-section {
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    /* Removed background-color: #f5f5f5; to allow main's gradient to show */
+    /* If you want a distinct background for this section, you can add it back with a different color/gradient */
+    background: linear-gradient(to right, #eaf5e9, #d0f0d0); /* A subtle green gradient for this section*/
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Stronger shadow for emphasis */
+}
+
+.hero-background-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+.decor-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0.8;
+}
+
+.circle-1 { top: 10%; left: 5%; width: 60px; height: 60px; }
+.circle-2 { top: 80%; left: 15%; width: 40px; height: 40px; }
+.circle-3 { top: 20%; right: 10%; width: 70px; height: 70px; }
+.circle-4 { top: 50%; right: 5%; width: 50px; height: 50px; }
+.circle-5 { bottom: 10%; left: 40%; width: 80px; height: 80px; }
+.circle-6 { top: 5%; left: 30%; width: 30px; height: 30px; }
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-features-section h2 {
+    font-size: 36px;
+    color: #2d5f8b;
+    margin-bottom: 40px;
+    text-shadow: none;
+}
+
+.feature-clouds-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.feature-cloud {
+    background-color: white;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    padding: 30px 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 200px;
+    position: relative;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.feature-cloud:hover {
+    transform: translateY(-5px);
+}
+
+.feature-cloud h3 {
+    font-size: 20px;
+    color: #2d5f8b;
+    margin-bottom: 10px;
+}
+
+.feature-cloud p {
+    font-size: 15px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.feature-cloud strong {
+    color: #007bff;
+}
+
+.more-info-arrow {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: solid #2d5f8b;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin-top: 15px;
+    transition: transform 0.2s ease;
+}
+
+.feature-cloud:hover .more-info-arrow {
+    transform: rotate(45deg) scale(1.1);
+}
+
+.become-member-btn {
+    background-color: #64AD13;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.become-member-btn:hover {
+    background-color: #55990B;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .feature-clouds-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-cloud {
+        width: 80%;
+        max-width: 300px;
+    }
+    .hero-features-section h2 {
+        font-size: 28px;
+    }
+    .hero-features-section {
+        padding: 40px 15px;
+    }
+    .popup-content {
+        flex-direction: column;
+        max-width: 90%;
+    }
+    .popup-graphic-container {
+        padding: 0; /* Ensures no padding on small screens either */
+    }
+    .popup-form-container {
+        padding: 20px;
+    }
+    .close-btn {
+        top: 5px;
+        right: 5px;
+    }
+    /* Responsive adjustments for membership cards */
+    .membership-card {
+        width: 90%; /* Make cards take up more width on small screens */
+        max-width: 350px;
+    }
+    /* Responsive adjustments for learning page cards */
+    .grade-level-card {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align content to the left */
+        gap: 10px;
+    }
+    .grade-icon {
+        margin-bottom: 5px; /* Add some space below icon */
+    }
+    .skills-button {
+        width: 100%; /* Make button full width */
+        text-align: center;
+    }
+}
+/* Existing CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    /* Changed background-color to a light, soft green */
+    background-color: #E6F0E6; /* A very light green for the overall background */
+    /* Add fade-in animation to the body */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+header {
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Add fade-in animation to the header */
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.2s; /* Delay header slightly */
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* NEW ANIMATION FOR MEMBERSHIP CARDS */
+@keyframes slideInUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Start 50px below its final position */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at its original position */
+    }
+}
+
+.membership-cards-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #E0F7FA; /* Light blue background as seen in image_ee050f.png */
+    min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.membership-cards-section h1 {
+    color: #2d5f8b; /* Blue color for heading */
+    font-size: 36px;
+    margin-bottom: 30px;
+     /* Apply initial fade-in with a slight delay to the heading */
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.6s;
+}
+
+.membership-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    justify-content: center;
+    gap: 25px; /* Space between cards */
+    max-width: 1000px; /* Max width for the cards section */
+    margin: 0 auto;
+}
+
+.membership-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 300px; /* Fixed width for cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    /* Apply the new animation */
+    opacity: 0; /* Start hidden */
+    animation: slideInUpFade 0.8s forwards; /* Animation duration */
+}
+
+/* Stagger the animation for each card */
+.membership-card:nth-child(1) { animation-delay: 0.8s; } /* First card */
+.membership-card:nth-child(2) { animation-delay: 1.0s; } /* Second card */
+.membership-card:nth-child(3) { animation-delay: 1.2s; } /* Third card */
+
+
+.membership-card:hover {
+    transform: translateY(-5px);
+}
+
+.membership-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.membership-card .card-icon {
+    width: 100px; /* Adjust icon size */
+    height: 100px;
+    margin-bottom: 20px;
+    /* You would use SVG images here if you had them */
+    /* For now, consider a placeholder background for icons */
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px; /* Placeholder text size */
+    color: #666;
+}
+
+/* Specific icon colors based on the image_ee050f.png */
+.membership-card.families .card-icon { background-color: #e6ffe6; color: #7CB342; } /* Light green */
+.membership-card.classrooms .card-icon { background-color: #e0f2f7; color: #26A69A; } /* Light turquoise */
+.membership-card.schools .card-icon { background-color: #e0f2f7; color: #2196F3; } /* Light blue */
+
+.membership-card p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.membership-card .card-button-primary {
+    background-color: #64AD13; /* Green button */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* For links */
+}
+
+.membership-card .card-button-primary:hover {
+    background-color: #55990B;
+}
+
+.membership-card .card-button-secondary {
+    background-color: transparent;
+    color: #2d5f8b; /* Blue text */
+    border: 1px solid #2d5f8b;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none; /* For links */
+}
+
+/* Specific button colors based on the image_ee050f.png */
+.membership-card.classrooms .card-button-primary { background-color: #26A69A; } /* Turquoise */
+.membership-card.classrooms .card-button-primary:hover { background-color: #1a7d74; }
+.membership-card.classrooms .card-button-secondary { border-color: #26A69A; color: #26A69A; }
+.membership-card.classrooms .card-button-secondary:hover { background-color: #26A69A; color: white; }
+
+.membership-card.schools .card-button-primary { background-color: #2196F3; } /* Blue */
+.membership-card.schools .card-button-primary:hover { background-color: #1976D2; }
+.membership-card.schools .card-button-secondary { border-color: #2196F3; color: #2196F3; }
+.membership-card.schools .card-button-secondary:hover { background-color: #2196F3; color: white; }
+
+.membership-card .card-button-secondary:hover {
+    background-color: #2d5f8b;
+    color: white;
+}
+
+/* End of NEW CSS for the membership cards */
+
+/* NEW CSS for the learning page (for learning.html) */
+.learning-page-hero {
+    background: linear-gradient(to right, #64AD13, #26A69A); /* Gradient background from image_ee1434.png */
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.learning-page-hero .lighthouse-icon {
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+}
+
+.learning-page-hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: white; /* Override main h1 color */
+}
+
+.learning-page-hero p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.grade-level-container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grade-level-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out content and button */
+    gap: 20px; /* Space between elements in the card */
+}
+
+.grade-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Specific colors for grade icons based on image_ee1434.png */
+.grade-icon.jk { background-color: #F4A261; } /* Orange */
+.grade-icon.k { background-color: #D32F2F; } /* Red */
+.grade-icon.grade1 { background-color: #673AB7; } /* Deep Purple */
+.grade-icon.grade2 { background-color: #4CAF50; } /* Green */
+.grade-icon.grade3 { background-color: #FF5722; } /* Deep Orange */
+.grade-icon.grade4 { background-color: #2196F3; } /* Blue */
+.grade-icon.grade5 { background-color: #FFC107; } /* Amber */
+.grade-icon.grade6 { background-color: #009688; } /* Teal */
+.grade-icon.grade7 { background-color: #3F51B5; } /* Indigo */
+.grade-icon.grade8 { background-color: #FF9800; } /* Orange 500 */
+.grade-icon.grade9 { background-color: #8BC34A; } /* Light Green */
+.grade-icon.grade10 { background-color: #F44336; } /* Red 500 */
+.grade-icon.grade11 { background-color: #9C27B0; } /* Purple */
+.grade-icon.grade12 { background-color: #00BCD4; } /* Cyan */
+
+.grade-content {
+    flex-grow: 1; /* Allows content to take available space */
+    text-align: left;
+}
+
+.grade-title-small {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.grade-subjects {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.skills-button {
+    background-color: #673AB7; /* Default purple */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Keep text on one line */
+}
+
+/* Specific button colors for skills buttons based on image_ee1434.png */
+.skills-button.green { background-color: #4CAF50; }
+.skills-button.red { background-color: #D32F2F; }
+.skills-button.orange { background-color: #FF9800; }
+.skills-button.blue { background-color: #2196F3; }
+.skills-button.purple { background-color: #9C27B0; }
+.skills-button.teal { background-color: #009688; }
 
 .skills-button:hover {
     opacity: 0.9;
@@ -605,7 +1142,6 @@ h1 {
 .circle-4 { top: 50%; right: 5%; width: 50px; height: 50px; }
 .circle-5 { bottom: 10%; left: 40%; width: 80px; height: 80px; }
 .circle-6 { top: 5%; left: 30%; width: 30px; height: 30px; }
-
 
 .hero-content-wrapper {
     position: relative;
